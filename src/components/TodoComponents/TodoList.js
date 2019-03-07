@@ -2,17 +2,16 @@ import React from 'react';
 
 import Todo from './Todo';
 
-const TodoList = (props) => {
-  console.log('INSIDE TodoList', props);
-  const {tasksArrayProps} = props;
+const TodoList = ({tasks}) => {
+  console.log('INSIDE TodoList:', tasks);
 
   return (
     <div>
-      {tasksArrayProps.map((obj) => {
-        console.log('FROM MAP:::', obj.task);
-        const task = obj.task;
+      {tasks.map((task) => {
+        console.log('FROM MAP:', task.task);
+        const {id} = task;
 
-        return <Todo key={obj.id} task={task} />
+        return <Todo key={id} task={task.task} />
 
       })}
     </div>

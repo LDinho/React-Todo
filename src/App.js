@@ -10,7 +10,7 @@ const todosData = [
     completed: false
   },
   {
-    task: 'Bake Cookies',
+    task: 'Bake Chocolate Cookies',
     id: 1528817084358,
     completed: false
   }
@@ -21,18 +21,32 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      tasks: todosData,
+      tasks: [],
 
     }
   }
 
+  handleFormSubmit = (newTodo) => {
+  console.log('TASKNAME:', newTodo);
+  this.setState( (prevState) => {
+    return {
+      tasks: [...prevState.tasks, newTodo]
+    }
+    // if not using prevState, then just pass
+    // in this.setState { tasks: [...this.state.tasks, newTodo] }
+    // this.setState takes either a function or an object
+  });
+
+  }
+
   render() {
-    console.log(this.state);
+    console.log('STATE:', this.state);
     return (
       <div>
         <h2>==TodoOrNotTodo==</h2>
-        <TodoList tasksArrayProps={this.state.tasks} />
-        <TodoForm />
+        <TodoForm onFormSubmit={this.handleFormSubmit} />
+        <TodoList tasks={this.state.tasks} />
+
       </div>
     );
   }
