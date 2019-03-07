@@ -1,11 +1,16 @@
 import React from 'react';
 
-const Todo = (props) => {
-  const {task} = props;
+const Todo = ({task, onTaskClick}) => {
 
   return (
-    <div>
-      <p>{task}</p>
+    <div onClick={onTaskClick}>
+      <p>
+        {task.completed ?
+          <strike>{task.task}</strike>
+          :
+          task.task
+        }
+      </p>
     </div>
   )
 }
