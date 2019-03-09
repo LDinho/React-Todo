@@ -1,7 +1,13 @@
 import React, {useRef} from 'react';
 
+import './Todo.css';
+
+
 const TodoForm = ({onFormSubmit, onClearBtnClick}) => {
-  const inputEl = useRef(null); // React Hook
+  // React Hooks:
+  // https://reactjs.org/docs/hooks-reference.html#useref
+  //https://reactjs.org/docs/refs-and-the-dom.html
+  const inputEl = useRef(null);
 
   return (
     <form onSubmit={(e) => {
@@ -21,13 +27,21 @@ const TodoForm = ({onFormSubmit, onClearBtnClick}) => {
       onFormSubmit(newTodo);
       inputEl.current.value = '';
     }}>
-      <input
-        name="name"
-        ref={inputEl}
-        placeholder="add your task here..."
-      />
-      <button type="submit">Add Task</button>
-      <button onClick={onClearBtnClick}>Clear Completed</button>
+
+      <label className="label" htmlFor="">
+        Add a task:
+        <input
+          className="input"
+          name="todo"
+          ref={inputEl}
+          placeholder="What to do...?"
+        />
+      </label>
+
+      <div className="button-wrapper">
+        <button className="btn add-btn" type="submit">Add Task</button>
+        <button className="btn clear-btn" onClick={onClearBtnClick}>Clear Completed</button>
+      </div>
     </form>
   );
 

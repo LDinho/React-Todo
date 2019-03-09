@@ -1,0 +1,66 @@
+.label {
+    font-size: 2.8rem;
+    padding: 3%;
+}
+
+.input {
+    background: #FFFEE9;
+    box-shadow: 1px 2px 2px 0px #888888;
+    font-size: 2.8rem;
+    margin-top: 1%;
+    margin-bottom: 6%;
+    padding: 3%;
+    width: 100%;
+}
+
+.input::placeholder {
+    font-size: 2.8rem;
+    opacity: 0.4;
+}
+
+.item-wrapper {
+    font-size: 2.8rem;
+    padding: 3%;
+    border: 1px solid lightgray;
+    /*box-shadow: 0px 0px 16px 5px grey;*/
+    background-color: #fffecec7;
+    /*border-bottom: none;*/
+}
+
+.button-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 4%;
+}
+
+.btn {
+    margin-bottom: 2%;
+}
+
+.add-btn {
+    /*border-bottom-left-radius: 10px;*/
+    border-radius: 6px;
+    box-shadow: 0px 3px 6px 1px grey;
+
+
+}
+
+.add-btn:hover {
+    /*background-color: #CFCC6C;*/
+    background-color: #cfcc6c94;
+    box-shadow: 0px 0px 16px 2px grey;
+    transition: box-shadow 0.4s ease-out;
+}
+
+.clear-btn {
+    /*border-bottom-right-radius: 6px;*/
+    border-radius: 6px;
+    box-shadow: 0px 3px 6px 1px grey;
+
+}
+
+.clear-btn:hover {
+    background-color: #cfcc6c94;
+    box-shadow: 0px 0px 16px 2px grey;
+    transition: box-shadow 0.4s ease-out;
+}

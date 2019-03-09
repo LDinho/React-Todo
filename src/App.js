@@ -1,4 +1,5 @@
 import React from 'react';
+import './App.css';
 
 import TodoForm from './components/TodoComponents/TodoForm';
 import TodoList from './components/TodoComponents/TodoList';
@@ -78,8 +79,8 @@ class App extends React.Component {
   render() {
     console.log('STATE:', this.state);
     return (
-      <div>
-        <h2>==TodoOrNotTodo==</h2>
+      <div className="main-container">
+        <h1 className="header-title">- TodoOrNotTodo -</h1>
         <TodoForm onFormSubmit={this.handleFormSubmit}
                   onClearBtnClick={this.handleClearCompleted}
         />
